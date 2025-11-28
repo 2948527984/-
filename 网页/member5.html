@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要乐奈--mygo！！！！！</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Rounded MT Bold', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #77DD77, #A8E6A8);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #2E8B57;
+            text-shadow: 2px 2px 0 #98FB98;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #3CB371;
+            margin-bottom: 20px;
+        }
+        
+        .member-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .member-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .member-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .member-image {
+            flex: 1;
+            min-width: 200px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #77DD77, #A8E6A8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .member-bio {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #3CB371;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2E8B57;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #2E8B57, #3CB371);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #3CB371;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .member-details {
+                flex-direction: column;
+            }
+            
+            .member-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rāna</h1>
+            <div class="subtitle">想吃抹茶芭菲&nbsp;</div>
+        </header>
+        
+        <div class="member-page">
+            <div class="member-details">
+                <div class="member-image">
+                    <img 
+    src="55.png"  <!-- 改成你的图片URL/本地路径（网络图/本地图都可以） -->
+   
+     <!-- 适配容器+圆角 -->
+  
+                </div>
+                <div class="member-bio">
+                    <h2>个人简介</h2>
+                    <p>花村爱丽丝是乐队中的小提琴手，她的演奏为乐队的音乐增添了独特的优雅和情感深度。她温柔治愈的性格让她成为团队中的心灵支柱。</p>
+                    <p>出生于艺术世家的花村爱丽丝，从小接受古典音乐训练，但她喜欢将古典乐器与现代流行音乐相结合，创造出令人耳目一新的音乐体验。</p>
+                    <p>她的梦想是通过音乐治愈人们的心灵，让每个人都能在音乐中找到安慰和力量。除了小提琴，她还擅长中提琴和部分管弦乐器。</p>
+                    
+                    <div class="member-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">生日</div>
+                            <div class="stat-value">9月30日</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">星座</div>
+                            <div class="stat-value">天秤座</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">血型</div>
+                            <div class="stat-value">A型</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">身高</div>
+                            <div class="stat-value">165cm</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">代表色</div>
+                            <div class="stat-value">绿色</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">特长</div>
+                            <div class="stat-value">小提琴、声乐</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-btn">返回主页面</a>
+            
+            <footer>
+                <p>mygo！！！！！ - 要乐奈</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html><strong></strong>
