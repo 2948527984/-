@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>椎名立希--mygo！！！！！</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Rounded MT Bold', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #7777AA, #9999CC);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #555588;
+            text-shadow: 2px 2px 0 #AAAAEE;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #444477;
+            margin-bottom: 20px;
+        }
+        
+        .member-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .member-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .member-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .member-image {
+            flex: 1;
+            min-width: 200px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #7777AA, #9999CC);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .member-bio {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #444477;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #555588;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #555588, #444477);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #444477;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .member-details {
+                flex-direction: column;
+            }
+            
+            .member-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Taki</h1>
+            <div class="subtitle">竟敢无视灯&nbsp;</div>
+        </header>
+        
+        <div class="member-page">
+            <div class="member-details">
+                <div class="member-image">
+                    <img 
+    src="44.png"  <!-- 改成你的图片URL/本地路径（网络图/本地图都可以） -->
+   
+     <!-- 适配容器+圆角 -->
+  
+                </div>
+                <div class="member-bio">
+                    <h2>个人简介</h2>
+                    <p>水野诗织是乐队中节奏感最强的成员，她的鼓点为乐队的音乐提供了稳定的基础和强大的推动力。她认真负责的性格让她在练习和表演中都表现出极高的专业素养。</p>
+                    <p>从小学习打击乐的水野诗织，对节奏有着天生的敏感度。她能够轻松驾驭各种复杂的节奏型，为乐队的音乐增添丰富的层次感。</p>
+                    <p>虽然平时话不多，但一旦拿起鼓棒，她就会展现出惊人的能量和表现力。她的梦想是成为世界级的鼓手，让更多人感受到节奏的魅力。</p>
+                    
+                    <div class="member-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">生日</div>
+                            <div class="stat-value">2月14日</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">星座</div>
+                            <div class="stat-value">水瓶座</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">血型</div>
+                            <div class="stat-value">AB型</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">身高</div>
+                            <div class="stat-value">160cm</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">代表色</div>
+                            <div class="stat-value">蓝紫色</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">特长</div>
+                            <div class="stat-value">打击乐、编曲</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-btn">返回主页面</a>
+            
+            <footer>
+                <p>mygo！！！！！ - 椎名立希</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
