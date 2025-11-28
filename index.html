@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mygo!!!!! - 主界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Rounded MT Bold', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #3388BB, #66AAFF);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #3388BB;
+            text-shadow: 3px 3px 0 #77BBDD;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #7777AA;
+            margin-bottom: 20px;
+        }
+        
+        /* 新增的图片区域样式 */
+        .band-image-container {
+            width: 100%;
+            max-width: 930px;
+            height: 300px;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .band-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .band-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #77BBDD, #5599CC);
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .band-info {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+        }
+        
+        /* 修改成员网格布局 */
+        .members-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .member-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            cursor: pointer;
+            width: 180px; /* 固定宽度确保一行能放下五个 */
+            flex-shrink: 0; /* 防止卡片被压缩 */
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .member-avatar {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            /* 成员头像图片插入处 */
+        }
+        
+        .member-info {
+            padding: 15px;
+        }
+        
+        .member-name {
+            font-size: 1.3rem;
+            color: #3388BB;
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            font-size: 0.9rem;
+            color: #7777AA;
+            margin-bottom: 10px;
+        }
+        
+        .member-desc {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #3388BB, #7777AA);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7777AA;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1100px) {
+            .member-card {
+                width: 160px; /* 中等屏幕调整宽度 */
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            .member-card {
+                width: 150px; /* 进一步调整宽度 */
+            }
+            .members-grid {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 920px) {
+            .members-grid {
+                justify-content: space-around;
+            }
+            .member-card {
+                width: 170px; /* 在小屏幕上调整宽度，使一行能放下五个 */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .band-image-container {
+                height: 200px;
+            }
+            
+            .members-grid {
+                justify-content: space-between;
+            }
+            
+            .member-card {
+                width: 48%; /* 在移动设备上每行显示两个 */
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .member-card {
+                width: 100%; /* 在非常小的屏幕上每行显示一个 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>mygo!!!!!</h1>
+            <div class="subtitle">不畏迷茫，迷茫着也要砥砺前行。</div>
+            
+            <!-- 新增的乐队图片区域 -->
+            <div class="band-image-container">
+                <div class="band-image" style="width: 100%; height: 400px;">
+                    <!-- 替换占位内容为图片 -->
+                    <img 
+                        src="0.png"
+                        alt="乐队合影"
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                </div>
+            </div>
+        </header>
+        
+        <div class="band-info">
+            <p>「MyGo!!!!!」是一支来自二次元的五人少女乐队，她们的音乐充满活力与梦想，用歌声传递希望与快乐。五位成员各自拥有独特的才华和个性，共同创造出令人心动的音乐世界。</p>
+            <p>乐队成立于2020年，已经发行了三张专辑，并在虚拟世界中举办了多场成功的演唱会。她们的目标是用音乐连接所有人的心，让每个人都能找到属于自己的星光。</p>
+        </div>
+        
+        <h2 style="text-align: center; color: #7777AA; margin-bottom: 20px;">乐队成员</h2>
+        
+        <div class="members-grid">
+            <!-- 新顺序：3 风间 樱 -->
+            <a href="member3.html" style="text-decoration: none;">
+                <div class="member-card">
+                    <div class="member-avatar" style="background-image: url('3.png'), linear-gradient(135deg, #FFDD88, #DDBB66);"></div>
+                    <div class="member-info">
+                        <div class="member-name">长崎素世</div>
+                        <div class="member-role">贝斯手</div>
+                        <div class="member-desc">乐队的气氛制造者，活泼开朗，擅长用低音为音乐增添深度。</div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- 新顺序：2 月岛 铃 -->
+            <a href="member2.html" style="text-decoration: none;">
+                <div class="member-card">
+                    <div class="member-avatar" style="background-image: url('2.png'), linear-gradient(135deg, #FF8899, #DD6677);"></div>
+                    <div class="member-info">
+                        <div class="member-name">千早爱音</div>
+                        <div class="member-role">吉他手</div>
+                        <div class="member-desc">音乐天才，能够创作出令人心动的旋律，性格冷静但内心温暖。</div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- 新顺序：5 花村 爱丽丝 -->
+            <a href="member5.html" style="text-decoration: none;">
+                <div class="member-card">
+                    <div class="member-avatar" style="background-image: url('5.png'), linear-gradient(135deg, #77DD77, #55BB55);"></div>
+                    <div class="member-info">
+                        <div class="member-name">要乐奈</div>
+                        <div class="member-role">吉他手</div>
+                        <div class="member-desc">为乐队音乐增添独特魅力，优雅温柔，是团队中的治愈系存在。</div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- 新顺序：1 星野 梦 -->
+            <a href="member1.html" style="text-decoration: none;">
+                <div class="member-card">
+                    <div class="member-avatar" style="background-image: url('1.png'), linear-gradient(135deg, #77BBDD, #5599CC);"></div>
+                    <div class="member-info">
+                        <div class="member-name">高松灯</div>
+                        <div class="member-role">主唱</div>
+                        <div class="member-desc">乐队的灵魂人物，拥有天使般的嗓音和阳光般的笑容，总是带给团队正能量。</div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- 新顺序：4 水野 诗织 -->
+            <a href="member4.html" style="text-decoration: none;">
+                <div class="member-card">
+                    <div class="member-avatar" style="background-image: url('4.png'), linear-gradient(135deg, #7777AA, #555588);"></div>
+                    <div class="member-info">
+                        <div class="member-name">椎名立希</div>
+                        <div class="member-role">鼓手</div>
+                        <div class="member-desc">节奏感超强，为乐队提供稳定的节拍，性格认真负责。</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <footer>
+            <p>MyGo!!!!! - 组一辈子乐队</p>
+        </footer>
+    </div>
+</body>
+</html>
